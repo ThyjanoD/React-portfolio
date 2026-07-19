@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+
+
+@font-face {
+  font-family: "EditorialToday";
+  src: url("/fonts/EditorialToday-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EditorialToday";
+  src: url("/fonts/EditorialToday-ThinItalic.ttf") format("truetype");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EditorialToday";
+  src: url("/fonts/EditorialToday-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EditorialToday";
+  src: url("/fonts/EditorialToday-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EditorialToday";
+  src: url("/fonts/EditorialToday-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EditorialToday";
+  src: url("/fonts/EditorialToday-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EditorialToday";
+  src: url("/fonts/EditorialToday-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EditorialToday";
+  src: url("/fonts/EditorialToday-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EditorialToday";
+  src: url("/fonts/EditorialToday-ExtraBoldItalic.ttf") format("truetype");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@theme {
+    --color-primary-100: #F9F7F3;
+    --color-primary-200: #F3EFE7;
+    --color-primary-300: #EDE8DC;
+    --color-primary-400: #E7E0D0;
+    --color-primary-500: #E1D8C4;
+    --color-primary-600: #B4AD9D;
+    --color-primary-700: #878276;
+    --color-primary-800: #5A564E;
+    --color-primary-900: #2D2B27;
+
+    --font-editorial: "EditorialToday", sans-serif;
+}
+
+@utility container {
+    @apply mx-auto px-4;
+}
+
+@layer base {
+    body {
+        @apply font-editorial text-primary-500 bg-black text-base;
+        top: 0 !important;
+        p {
+            @apply mb-2 leading-8;
+        }
+    }
+
+    h1,
+    .h1 {
+        @apply text-primary-500 text-4xl font-extrabold lg:text-8xl;
+    }
+
+    h2,
+    .h2 {
+        @apply text-primary-500 text-3xl font-extrabold lg:text-5xl;
+    }
+
+    h3,
+    .h3 { 
+        @apply text-4xl;
+    }
+
+    h4,
+    .h4 {
+        @apply text-2xl font-semibold;
+    }
+
+    h5,
+    .h5 {
+        @apply text-4xl font-bold lg:text-5xl;
+    }
+}
