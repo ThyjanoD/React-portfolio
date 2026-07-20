@@ -56,7 +56,7 @@ export default function Menu({ isOpen, onClose }: MenuProps) {
     return (
         <div ref={menuRef} className="fixed left-0 top-0 z-[90] h-screen w-full overflow-y-hidden overscroll-contain bg-black" style={{ transform: "translateY(-100%)" }}>
             <div className="flex h-full flex-col items-center justify-center gap-10 text-center text-7xl font-extrabold tracking-[-2%] md:text-8xl">
-                <NavLink to="/portfolio" onClick={onClose} className={linkClass} ref={(el) => setLinkRef(el, 0)} >WORK</NavLink>
+                <NavLink to="/work" onClick={onClose} className={linkClass} ref={(el) => setLinkRef(el, 0)} >WORK</NavLink>
                 <NavLink to="/about" onClick={onClose} className={linkClass} ref={(el) => setLinkRef(el, 1)} >ABOUT</NavLink>
                 <NavLink to="/contact" onClick={onClose} className={linkClass} ref={(el) => setLinkRef(el, 2)} >CONTACT</NavLink>
             </div>
