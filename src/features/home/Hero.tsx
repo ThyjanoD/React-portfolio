@@ -11,7 +11,7 @@ export default function Hero({ hero, image }: HeroProps) {
             <div className="container">
                 <div className="relative flex justify-center">
                     <img src={image} alt={hero.hero_title} className="relative mt-6 rounded-4xl lg:mt-24 max-w-96" />
-                    <div className="absolute bottom-0 left-0 h-full w-full rounded-4xl bg-black/20" />
+                    <div className="absolute bottom-0 left-0 h-full w-full rounded-4xl bg-black/35" />
                 </div>
 
                 <div className="absolute top-78 left-0 w-full lg:top-111">

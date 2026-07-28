@@ -1,3 +1,5 @@
+{/* Haven't made the content of this section dynamic because i don't have ACF Pro, which means i can't use the repeater field. */}
+
 import { WorkCard } from "../../components/ui/WorkCard"
 
 export default function Work() {

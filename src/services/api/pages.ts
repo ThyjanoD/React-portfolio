@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { get } from "./client";
-import type { WorkPage, HomePage } from "./types";
+import type { HomePage, WorkPage, AboutPage, } from "./types";
 
 
 export async function getPage<T>(slug: string): Promise<T> {
@@ -22,6 +22,6 @@ export async function getWorkPage(): Promise<WorkPage> {
   return getPage<WorkPage>("work");
 }
 
-// export async function getAboutPage(): Promise<AboutPage> {
-//   return getPage<AboutPage>("about");
-// }
+export async function getAboutPage(): Promise<AboutPage> {
+  return getPage<AboutPage>("about");
+}

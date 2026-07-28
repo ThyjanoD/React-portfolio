@@ -1,4 +1,22 @@
+import { useEffect, useState } from "react";
+import { getSiteOptions, type SiteOptions } from "../../services/api/options";
+
 export default function ContactDetails() {
+    const [options, setOptions] = useState<SiteOptions | null>(null);
+
+    useEffect(() => {
+        async function fetchData() {
+            const siteOptions = await getSiteOptions();
+            setOptions(siteOptions);
+        }
+    
+        fetchData();
+    }, []);
+
+    if (!options) {
+        return <footer>Loading...</footer>;
+    }
+
     return (
         <section className="pb-6">
             <div className="container">
@@ -11,13 +29,18 @@ export default function ContactDetails() {
                             <div className="pb-6">
                                 <span className="text-primary-500/40 block pb-6 text-sm italic">CONTACT DETAILS</span>
                                 <div className="flex flex-col gap-6 text-2xl tracking-[-5%]">
-                                    <a href="#Email" className="cursor-pointer duration-300 hover:underline">Thyjanodania@gmail.com</a>
-                                    <a href="#Call" className="cursor-pointer duration-300 hover:underline">+31 6 39 01 33 15</a>
+                                <a href={options.email.url} target={options.email.target || "_self"} rel={options.email.target === "_blank" ? "noopener noreferrer" : undefined} className="cursor-pointer duration-300 hover:underline">
+                                    {options.email.title}
+                                </a>
+                                <a href={options.phone_number.url} target={options.phone_number.target || "_self"} rel={options.phone_number.target === "_blank" ? "noopener noreferrer" : undefined} className="cursor-pointer duration-300 hover:underline">
+                                    {options.phone_number.title}
+                                </a>
                                 </div>
                             </div>
                             <span className="text-primary-500/40 block pb-6 text-sm italic">SOCIALS</span>
                             <div className="flex gap-4 pb-6">
-                                <a href="#linkedin" className="cursor-pointer duration-300 hover:scale-110"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <a href={options.linkedin.url} target={options.linkedin.target || "_self"} rel={options.linkedin.target === "_blank" ? "noopener noreferrer" : undefined} className="cursor-pointer duration-300 hover:scale-110">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_113_241)">
                                         <path d="M5.4165 6.66675C6.10686 6.66675 6.6665 6.10711 6.6665 5.41675C6.6665 4.72639 6.10686 4.16675 5.4165 4.16675C4.72615 4.16675 4.1665 4.72639 4.1665 5.41675C4.1665 6.10711 4.72615 6.66675 5.4165 6.66675Z" fill="#E1D8C4" />
                                         <path d="M4.1665 8.33333C4.1665 7.8731 4.5396 7.5 4.99984 7.5H5.83317C6.2934 7.5 6.6665 7.87309 6.6665 8.33333V15C6.6665 15.4602 6.2934 15.8333 5.83317 15.8333H4.99984C4.5396 15.8333 4.1665 15.4602 4.1665 15V8.33333Z" fill="#E1D8C4" />
@@ -31,7 +54,8 @@ export default function ContactDetails() {
                                     </defs>
                                 </svg>
                                 </a>
-                                <a href="#instagram" className="cursor-pointer duration-300 hover:scale-110"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <a href={options.instagram.url} target={options.instagram.target || "_self"} rel={options.instagram.target === "_blank" ? "noopener noreferrer" : undefined} className="cursor-pointer duration-300 hover:scale-110">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_113_247)">
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M10 15C12.7614 15 15 12.7614 15 10C15 7.23857 12.7614 5 10 5C7.23857 5 5 7.23857 5 10C5 12.7614 7.23857 15 10 15ZM10 13.3333C11.8409 13.3333 13.3333 11.8409 13.3333 10C13.3333 8.15905 11.8409 6.66667 10 6.66667C8.15905 6.66667 6.66667 8.15905 6.66667 10C6.66667 11.8409 8.15905 13.3333 10 13.3333Z" fill="#E1D8C4" />
                                         <path d="M14.9998 4.16675C14.5396 4.16675 14.1665 4.53985 14.1665 5.00008C14.1665 5.46031 14.5396 5.83341 14.9998 5.83341C15.4601 5.83341 15.8332 5.46031 15.8332 5.00008C15.8332 4.53985 15.4601 4.16675 14.9998 4.16675Z" fill="#E1D8C4" />

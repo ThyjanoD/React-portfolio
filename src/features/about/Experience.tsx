@@ -1,16 +1,36 @@
 import { ExperienceCard } from "../../components/ui/ExperienceCard"
 
-export default function Experiences() {
+interface ExperienceProps {
+    experience: {
+        about_experience_title: string;
+
+        download_cv: {
+            title: string;
+            url: string;
+            target: string;
+        };
+
+        work_experience: {
+            employment_date: string;
+            employer_position: string;
+            work_task: string;
+        }[];
+    };
+}
+
+export default function Experiences({ experience}: ExperienceProps) {
     return (
         <section className="pb-16 lg:pb-24">
             <div className="container">
                 <div className="flex justify-between pb-6">
-                    <h2>Experience</h2>
-                    <a href="#DownloadCV" className="text-2xl underline duration-300 hover:scale-105 hover:cursor-pointer">Download CV</a>
+                    <h2>{experience.about_experience_title}</h2>
+                    <a href={experience.download_cv.url} target={experience.download_cv.target || "_self"} className="text-2xl underline duration-300 hover:scale-105 hover:cursor-pointer">
+                        {experience.download_cv.title}
+                    </a>
                 </div>
-                <ExperienceCard year="2025-2026" job="Front-End Developer, Flexsoftware" description="Recruitmentsoftware & Recruitment sites" />
-                <ExperienceCard year="2025-2025" job="Intern Front-End Developer, Flexsoftware" description="Recruitmentsoftware & Recruitment sites" />
-                <ExperienceCard year="2025-2025" job="Intern Front-End Developer, Reclame Reus" description="Webdesign & Websupport" />
+                {experience.work_experience.map((item, index) => (
+                    <ExperienceCard key={index} year={item.employment_date} job={item.employer_position} description={item.work_tasks.join(", ")} />
+                ))}
             </div>
         </section>
     )
