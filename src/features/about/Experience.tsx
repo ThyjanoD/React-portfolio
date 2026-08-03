@@ -13,7 +13,7 @@ interface ExperienceProps {
         work_experience: {
             employment_date: string;
             employer_position: string;
-            work_task: string;
+            work_tasks: string[];
         }[];
     };
 }

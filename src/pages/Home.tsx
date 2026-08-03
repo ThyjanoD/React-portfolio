@@ -53,7 +53,7 @@ export default function Home() {
             <Hero hero={page.acf.hero} image={heroImage}/>
             <About about={page.acf.about} image={aboutImage} />
             <Skills  skills={page.acf.skills}/>
-            <Portfolio jobs={options.job} />
+            <Portfolio jobs={options?.job ?? []} />
             <Contact />
         </main>
     );

@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 import { get } from "./client";
 import type { HomePage, WorkPage, AboutPage, } from "./types";
 

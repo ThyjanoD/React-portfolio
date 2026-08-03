@@ -46,7 +46,7 @@ export default function Work() {
     return (
         <main>
             <Hero hero={page.acf.work_hero} />
-            <Portfolio jobs={options.job} />
+            <Portfolio jobs={options?.job ?? []} />
             <About about={page.acf.work_about} image={aboutImage ?? ""} />
             <Contact />
         </main>

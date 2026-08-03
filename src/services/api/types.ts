@@ -21,7 +21,19 @@ export interface HomePage {
       skills: {
         skills_title: string;
         skills_content: string;
-      };
+        skills_outro: string;
+    
+        skills_cv_download: {
+            title: string;
+            url: string;
+            target: string;
+        };
+    
+        skill: {
+            skill_title: string;
+            skill_content: string;
+        }[];
+    };
     };
   }
 

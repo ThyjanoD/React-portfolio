@@ -1,5 +1,3 @@
-import React from "react";
-
 export function parseShortcodes(text: string) {
     const parts = text.split(/(\[e\].*?\[\/e\])/g);
 
