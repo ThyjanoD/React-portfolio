@@ -3,7 +3,7 @@
 
 Broncode van mijn persoonlijke portfolio.
 
-🌐 Live website: https://jouwdomein.nl
+🌐 Live website: https://codewiththyjano.nl
 
 Gebouwd met React, TypeScript en Vite.
 ```
