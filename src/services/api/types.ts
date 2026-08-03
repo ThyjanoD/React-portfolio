@@ -37,21 +37,22 @@ export interface HomePage {
     };
   }
 
-export interface WorkPage {
-  id: number;
-  slug: string;
-
-  acf: {
-    work_hero: {
-      work_hero_title: string;
+  export interface WorkPage {
+    id: number;
+    slug: string;
+  
+    acf: {
+      work_hero: {
+        work_hero_title: string;
+      };
+  
+      work_about: {
+        work_about_title: string;
+        work_about_content: string;
+        work_about_image: number;
+      };
     };
-
-    work_about: {
-      work_about_title: string;
-      work_about_content: string;
-    };
-  };
-}
+  }
 
 export interface AboutPage{
   id: number;
