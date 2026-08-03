@@ -26,7 +26,9 @@ export default function Contact() {
                         <a href={options.email.url} target={options.email.target || "_self"} rel={options.email.target === "_blank" ? "noopener noreferrer" : undefined} className="text-primary underline hover:translate-x-1 duration-300">
                                     {options.email.title}
                         </a>/
-                        <a href="#phone" className="text-primary underline hover:-translate-x-1 duration-300">Book a call</a>
+                        <a href={options.phone_number.url} target={options.phone_number.target || "_self"} rel={options.phone_number.target === "_blank" ? "noopener noreferrer" : undefined} className="text-primary underline hover:-translate-x-1 duration-300">
+                                    {options.phone_number.title}
+                        </a>
                     </div>
                 </div>
             </div>

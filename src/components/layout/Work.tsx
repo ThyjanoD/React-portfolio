@@ -9,6 +9,7 @@ export default function Work({ jobs }: WorkProps) {
     return (
         <section className="pb-16 lg:pb-24">
             <div className="container">
+                <h2 className="pb-6">WORK</h2>
                 <div className="flex flex-col gap-y-8">
                     {jobs.map((job, index) => (
                         <WorkCard

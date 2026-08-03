@@ -1,7 +1,6 @@
 interface MotivationProps {
     motivation: {
         about_motivation_title: string;
-
         motivations: {
             motivation_title: string;
             motivation_content: string;
